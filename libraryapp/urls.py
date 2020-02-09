@@ -1,9 +1,11 @@
-from django.contrib import admin
-from django.urls import include, path
 from django.urls import path
-from libraryapp.models import *
+from .views import *
+
+app_name = "libraryapp"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('libraryapp.urls')),
+    path('', book_list, name='home'),
+    path('books/', book_list, name='books'),
+    path('librarians/', list_librarians, name='librarians'),
+
 ]
