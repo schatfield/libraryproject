@@ -11,7 +11,7 @@ class Book (models.Model):
     isbn = models.CharField(max_length=50)
     author = models.CharField( max_length=50)
     pub_year = models.CharField( max_length=50)
-    # location = models.ForeignKey(Library, on_delete=models.CASCADE)
+    location = models.ForeignKey(Library, on_delete=models.CASCADE)
     librarian = models.ForeignKey(Librarian, on_delete=models.CASCADE)
 
     class Meta:
