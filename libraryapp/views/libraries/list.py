@@ -20,7 +20,7 @@ def list_libraries(request):
 
         all_libraries = []
         dataset = db_cursor.fetchall()
-
+        
         for row in dataset:
             lib = Library()
             lib.id = row["id"]
@@ -36,3 +36,4 @@ def list_libraries(request):
     }
 
     return render(request, template_name, context)
+
