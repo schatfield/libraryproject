@@ -36,10 +36,11 @@ def book_form(request):
         return render(request, template, context)
 
 @login_required
-def book_edit_form(request, book_id):
+def book_edit_form(request, book_id):    
 
     if request.method == 'GET':
         book = get_book(book_id)
+        print(book)
         libraries = get_libraries()
 
         template = 'books/form.html'
