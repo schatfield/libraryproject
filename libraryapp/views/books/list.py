@@ -1,5 +1,5 @@
 import sqlite3
-from django.shortcuts import render
+from django.shortcuts import render, reverse, redirect
 from libraryapp.models import Book
 from libraryapp.models import model_factory
 from django.contrib.auth.decorators import login_required
@@ -67,7 +67,7 @@ def book_list(request):
         INSERT INTO libraryapp_book
         (
             title, author, isbn,
-            year_published, location_id, librarian_id
+            pub_year, location_id, librarian_id
         )
         VALUES (?, ?, ?, ?, ?, ?)
         """,
