@@ -11,11 +11,18 @@
     <ol>
     {% for book in all_books %}
         <li>
-            {{ book.title }}
-            by {{book.author}}
-            published in {{book.pub_year}}
-        </li>
+    <a href="{% url 'libraryapp:book' book.id %}"> {{ book.title }} </a>
+    by {{book.author}} published in {{book.year_published}}
+</li>
     {% endfor %}
     </ol>
   </body>
 </html>
+
+
+
+{% comment %} <li>
+            {{ book.title }}
+            by {{book.author}}
+            published in {{book.pub_year}}
+        </li> {% endcomment %}
